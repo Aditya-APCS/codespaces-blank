@@ -6,6 +6,12 @@ public class Main {
    static String[] goodBye = {"Bye! Thanks for using our chatbot.", "See you again later.", "Bye! We hope you visit us again soon!", "Looking forward to the next time you use our service!"};
    static String[] menuItems = {"pizza", "sandwich","drink"};
    static Random rand = new Random();
+   public static final String ANSI_RESET = "\u001B[0m"; 
+   public static final String ANSI_YELLOW = "\u001B[33m"; 
+   public static final String ANSI_BLUE = "\u001B[34m"; 
+   public static final String ANSI_GREEN = "\u001B[32m"; 
+   public static final String ANSI_RED = "\u001B[31m"; 
+
    static char[][] seatingChart = new char[5][4]; // 5 rows, 4 columns seating chart
 
 
@@ -15,8 +21,8 @@ public class Main {
 
 
        initializeSeatingChart();
-       System.out.println("Hey there, welcome to The Classic Plate! I'm PlatePal. I can help you with the menu, "
-           + "placing togo orders, and reserving seats.");
+       System.out.println("Hey there, welcome to"+ANSI_YELLOW +" The Classic Plate!"+ANSI_RESET+ " I'm PlatePal. I can help you with the "+ANSI_BLUE+"menu, "
+       +ANSI_RESET+ ANSI_GREEN+"placing togo orders, "+ANSI_RESET+ANSI_RED+"and reserving seats."+ANSI_RESET);
 
 
        while (true) {
@@ -247,9 +253,6 @@ public class Main {
                 System.out.println(toppings[i]+". Noted");
                 x=toppings[i];
                 break;
-            }
-            else{
-                System.out.println("Sorry, we don't have that.");
             }
         }
         System.out.println("Here are our sizes(order now?):- small($8)/n- medium($12)/n- large($16)");
